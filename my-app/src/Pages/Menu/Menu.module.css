@@ -1,0 +1,120 @@
+.menuSection {
+  padding: 8rem 0;
+  background-color: #ffffff;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.menuHeader {
+  margin-bottom: 4rem;
+  padding: 0 5%;
+  text-align: left;
+}
+
+.menuTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.menuSubtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 0;
+  color: #777;
+}
+
+.menuScrollContainer {
+  display: flex;
+  gap: 2.5rem;
+  overflow-x: scroll; /* Enables horizontal scrolling */
+  padding: 0 5%;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  scroll-snap-type: x mandatory; /* Snaps to each item */
+  scroll-padding-left: 5%;
+}
+
+.menuItem {
+  min-width: 320px;
+  max-width: 320px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease-in-out;
+  scroll-snap-align: start; /* Each item will snap to the start of the view */
+}
+
+.menuItem:hover {
+  transform: translateY(-10px);
+}
+
+.imageContainer {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.itemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menuItem:hover .itemImage {
+  transform: scale(1.05);
+}
+
+.itemContent {
+  padding: 2rem 1.5rem;
+  text-align: left;
+}
+
+.itemName {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.itemDescription {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #777;
+  margin: 0;
+}
+
+.itemPrice {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  color: #6a5acd; /* Luxury accent color */
+}
+
+/* Hide scrollbar for a cleaner look */
+.menuScrollContainer::-webkit-scrollbar {
+  display: none;
+}
+.menuScrollContainer {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Mobile-friendly vertical layout */
+@media (max-width: 768px) {
+  .menuScrollContainer {
+    flex-direction: column;
+    overflow-x: hidden;
+    scroll-snap-type: none;
+    gap: 3rem;
+  }
+
+  .menuItem {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
